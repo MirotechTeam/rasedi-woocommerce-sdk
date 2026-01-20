@@ -7,7 +7,7 @@ $private_key = "-----BEGIN PRIVATE KEY-----\n" .
 "-----END PRIVATE KEY-----";
 
 $api_env = 'live'; // Using live key
-$base_url = 'https://stage.api.rasedi.com/v1/payment/rest/live';
+$base_url = 'https://api.rasedi.com/v1/payment/rest/live';
 $endpoint = '/create';
 $relativeUrl = '/v1/payment/rest/live' . $endpoint;
 
@@ -154,7 +154,7 @@ function make_request($url, $method, $key_id, $private_key, $body = null) {
 
 // --- TEST 2: Get Status ---
 echo "\n--- Testing Get Status ---\n";
-$status_url = 'https://stage.api.rasedi.com/v1/payment/rest/live/status/' . $referenceCode;
+$status_url = 'https://api.rasedi.com/v1/payment/rest/live/status/' . $referenceCode;
 $res = make_request($status_url, 'GET', $key_id, $private_key);
 echo "Status Code: " . $res['code'] . "\n";
 echo "Body: " . $res['body'] . "\n";
@@ -166,7 +166,7 @@ if ($res['code'] != 200) {
 
 // --- TEST 3: Cancel Payment ---
 echo "\n--- Testing Cancel ---\n";
-$cancel_url = 'https://stage.api.rasedi.com/v1/payment/rest/live/cancel/' . $referenceCode;
+$cancel_url = 'https://api.rasedi.com/v1/payment/rest/live/cancel/' . $referenceCode;
 $res = make_request($cancel_url, 'PATCH', $key_id, $private_key);
 echo "Cancel Code: " . $res['code'] . "\n";
 echo "Body: " . $res['body'] . "\n";

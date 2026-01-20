@@ -167,10 +167,10 @@ class WC_Gateway_Rasedi extends WC_Payment_Gateway {
         $order = wc_get_order($order_id);
 
         if ($this->testmode) {
-            $base_url = 'https://stage.api.rasedi.com/v1/payment/rest/test';
+            $base_url = 'https://api.rasedi.com/v1/payment/rest/test';
             $relative_url = '/v1/payment/rest/test';
         } else {
-            $base_url = 'https://stage.api.rasedi.com/v1/payment/rest/live';
+            $base_url = 'https://api.rasedi.com/v1/payment/rest/live';
             $relative_url = '/v1/payment/rest/live';
         }
         $endpoint = '/create';
